@@ -1,0 +1,46 @@
+.logo {
+	position: relative;
+	top: -10px;
+}
+button.navbar-toggle {
+	-webkit-transition: all 1.2s;
+	-o-transition: all 1.2s;
+	transition: all 1.2s;
+	&.open {
+		-webkit-transform: rotate(180deg);
+		-ms-transform: rotate(180deg);
+		-o-transform: rotate(180deg);
+		transform: rotate(180deg);
+	}
+	.icon-bar {
+		background-color: #58aff6
+	}
+}
+
+#bs-navbar {
+	background: #fff;
+	.navbar-nav {
+		li {
+			a {
+				&.active,
+				&:hover
+				{
+					color: #58aff6;
+				}
+			}
+			&:first-child {
+				a {
+					&.active {
+						color: #5f6060;
+					}
+				}
+			}
+		}
+	}
+}
+
+@media screen and (max-width:768px) {
+	#bs-navbar .navbar-nav li:first-child a.active {
+		color: #58aff6;
+	}
+}
