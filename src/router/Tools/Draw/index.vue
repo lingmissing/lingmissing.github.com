@@ -252,7 +252,6 @@
           const canvasX = e.clientX - t.parentNode.offsetLeft
           const canvasY = e.clientY - t.parentNode.offsetTop
           this.context.lineTo(canvasX, canvasY)
-          // console.log('lineTo',canvasX, canvasY)
           this.context.stroke()
         }
       },

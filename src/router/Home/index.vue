@@ -3,7 +3,7 @@
     <header>
       <h1>Code Is Poetry</h1>
       <p>代码如诗,一样可以点缀这个世界 <br/>
-          爱生活,爱自由,热爱前端,贴近用户，向上吧girl!</p>
+          爱生活,爱自由,热爱前端,贴近用户，向上吧少年!</p>
     </header>
     <section class="tiles">
       <case-article 
@@ -29,9 +29,6 @@
     },
     components: {
       'case-article': Article
-    },
-    methods: {
-
     }
   }
 </script>

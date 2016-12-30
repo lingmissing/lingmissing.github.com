@@ -3968,25 +3968,10 @@ button:disabled,
 }
 
 .tiles article > a {
-  display: -moz-flex;
-  display: -webkit-flex;
-  display: -ms-flex;
   display: flex;
-  -moz-flex-direction: column;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
   flex-direction: column;
-  -moz-align-items: center;
-  -webkit-align-items: center;
-  -ms-align-items: center;
   align-items: center;
-  -moz-justify-content: center;
-  -webkit-justify-content: center;
-  -ms-justify-content: center;
   justify-content: center;
-  -moz-transition: background-color 0.5s ease, -moz-transform 0.5s ease;
-  -webkit-transition: background-color 0.5s ease, -webkit-transform 0.5s ease;
-  -ms-transition: background-color 0.5s ease, -ms-transform 0.5s ease;
   transition: background-color 0.5s ease, transform 0.5s ease;
   position: absolute;
   top: 0;
@@ -4015,9 +4000,6 @@ button:disabled,
 }
 
 .tiles article > a .content {
-  -moz-transition: max-height 0.5s ease, opacity 0.5s ease;
-  -webkit-transition: max-height 0.5s ease, opacity 0.5s ease;
-  -ms-transition: max-height 0.5s ease, opacity 0.5s ease;
   transition: max-height 0.5s ease, opacity 0.5s ease;
   width: 100%;
   max-height: 0;
@@ -4061,9 +4043,6 @@ button:disabled,
 }
 
 body:not(.is-touch) .tiles article:hover > .image {
-  -moz-transform: scale(1.1);
-  -webkit-transform: scale(1.1);
-  -ms-transform: scale(1.1);
   transform: scale(1.1);
 }
 

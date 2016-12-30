@@ -3,7 +3,7 @@
     <span class="image">
       <img src="../assets/img8.png"/>
     </span>
-    <a :href="item.link" target="_blank">
+    <a :href="item.link">
       <h2>{{item.title}}</h2>
       <div class="content">
         {{item.desc}}

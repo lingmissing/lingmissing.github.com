@@ -8,6 +8,7 @@ import Resume from './Tools/Resume'
 import Reg from './Tools/Reg'
 import Base from './Tools/Base'
 import Draw from './Tools/Draw'
+import Doraemon from './OnlyCss/Doraemon'
 
 Vue.use(Router)
 
@@ -53,6 +54,11 @@ export default new Router({
       name: 'Draw',
       path: '/draw',
       component: Draw
+    },
+    {
+      name: 'Doraemon',
+      path: '/doraemon',
+      component: Doraemon
     }
   ]
 })

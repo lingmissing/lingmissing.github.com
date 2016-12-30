@@ -5,7 +5,7 @@
       <section>
         <h2>About</h2>
         <div>
-          WELCOME TO MY SITE
+          Let life be beautiful like summer flowers and death like autumn leaves
         </div>
       </section>
       <section>
