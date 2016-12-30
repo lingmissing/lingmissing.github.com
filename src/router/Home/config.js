@@ -1,8 +1,4 @@
 export default [{
-  id:1,
-  title: 'Online resume',
-  link: '#/resume'
-},{
   id:2,
   title: '在线Markdown',
   link: '#/markdown'

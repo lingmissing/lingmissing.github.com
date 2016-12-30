@@ -16,11 +16,6 @@
   export default {
     props: {
       item: Object
-    },
-    methods: {
-      imgSrc: function(id) {
-        return `../assets/img${id}.png`
-      }
     }
   }
 </script>

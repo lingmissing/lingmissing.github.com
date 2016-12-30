@@ -12,6 +12,28 @@ import Draw from './OnlineTools/Draw'
 
 import Doraemon from './OnlyCss/Doraemon'
 
+
+
+// const Home = resolve => require(['./Home'], resolve)
+
+// const Archives = resolve => require(['./Archives'], resolve)
+
+// const About = resolve => require(['./About'], resolve)
+
+// const Markdown = resolve => require(['./OnlineTools/Markdown'], resolve)
+
+// const Resume = resolve => require(['./OnlineTools/Resume'], resolve)
+
+// const Reg = resolve => require(['./OnlineTools/Reg'], resolve)
+
+// const Base = resolve => require(['./OnlineTools/Base'], resolve)
+
+// const Draw = resolve => require(['./OnlineTools/Draw'], resolve)
+
+// const Doraemon = resolve => require(['./OnlyCss/Doraemon'], resolve)
+
+
+
 Vue.use(Router)
 
 export default new Router({
