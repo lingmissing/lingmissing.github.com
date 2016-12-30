@@ -240,21 +240,6 @@
       removeImg:function(src) {
         this.imgUrl = this.imgUrl.filter(item => item !== src)
       },
-      aa: function() {
-        function span(name,sex){
-            this.name = name
-            this.sex  = sex
-            this.hobbit = []
-        }
-
-        People.prototype.addHobbit = function(h){
-            this.hobbit.push(h)
-            return this
-        }
-
-        var I = new People('Elaine','girl')
-        I.addHobbit('Ukulele').addHobbit('Painting').addHobbit('coding')
-      },
       initDraw: function () {
         const preData = this.context.getImageData(0, 0, 600, 400)
         //空绘图表面进栈
