@@ -7,14 +7,14 @@
       </div>
       <case-footer/>
     </div>
-    <case-side @openNav="openNav($event)"/>
+    <case-menu @openNav="openNav($event)"/>
   </div>
 </template>
 
 
 <script>
 
-  import Aside from 'components/Aside'
+  import Menu from 'components/Menu'
   import Footer from 'components/Footer'
   import Header from 'components/Header'
 
@@ -25,7 +25,7 @@
       }
     },
     components: {
-      'case-side': Aside,
+      'case-menu': Menu,
       'case-footer': Footer,
       'case-header': Header
     },

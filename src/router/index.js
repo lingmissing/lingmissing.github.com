@@ -3,11 +3,13 @@ import Router from 'vue-router'
 import Home from './Home'
 import Archives from './Archives'
 import About from './About'
-import Markdown from './Tools/Markdown'
-import Resume from './Tools/Resume'
-import Reg from './Tools/Reg'
-import Base from './Tools/Base'
-import Draw from './Tools/Draw'
+
+import Markdown from './OnlineTools/Markdown'
+import Resume from './OnlineTools/Resume'
+import Reg from './OnlineTools/Reg'
+import Base from './OnlineTools/Base'
+import Draw from './OnlineTools/Draw'
+
 import Doraemon from './OnlyCss/Doraemon'
 
 Vue.use(Router)

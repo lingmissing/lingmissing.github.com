@@ -16,7 +16,7 @@
 
 <script>
   import Article from 'components/Article'
-  import { moduleList } from '../../caseList'
+  import moduleList from './config'
 
   export default {
     data() {

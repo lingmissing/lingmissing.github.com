@@ -14,7 +14,7 @@
 </template>
 
 <script>
-  import { menuList } from '../caseList'
+  import menuList from './config'
   export default {
     data() {
       return {

@@ -33,7 +33,7 @@
 </style>
 
 <script>
-  import { footerList } from '../caseList'
+  import footerList from './config'
   export default {
     data() {
       return {

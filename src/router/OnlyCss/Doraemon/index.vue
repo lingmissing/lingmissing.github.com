@@ -57,6 +57,13 @@
 	position: relative;
 	margin-left: 30%;
 }
+
+@media (max-width: 700px) {
+	.doraemon {
+		margin-left: 50px !important;
+		margin-top: 50px;
+	}
+}
 .doraemon .head{
 	width: 320px;
 	height: 300px;
