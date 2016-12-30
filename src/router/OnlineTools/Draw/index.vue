@@ -101,7 +101,7 @@
   }
   .wrap{
     width: 740px;
-    border: 1px #ccc solid;
+    border: 1px #585858 solid;
     overflow: hidden;
   }
   .fl{
@@ -109,7 +109,7 @@
     display: inline;
   }
   #canvas{
-    border-right: 1px #ccc solid;
+    border-right: 1px #585858 solid;
     cursor: crosshair;
   }
   #control{
