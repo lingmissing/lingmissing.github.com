@@ -165,19 +165,19 @@
       this.$emit('setNav','正则表达式')
     },
     watch: {
-      text: function() {
+      text() {
         this.result = ''
       }
     },
     methods: {
-      getResult: function() {
+      getResult() {
         const testReg = `/^${this.reg}$/` 
         const { exe,globalSearch } = this.reg
         const matchReg = new RegExp(exe,globalSearch.join(''))
         const matchResult = this.text.match(matchReg)
         this.result = matchResult || []
       },
-      setReg: function(reg) {
+      setReg(reg) {
         this.reg.exe = reg
         this.getResult()
       }

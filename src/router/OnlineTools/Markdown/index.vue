@@ -90,17 +90,17 @@ textarea {
       }
     },
     computed: {
-      compiledMarkdown: function () {
+      compiledMarkdown () {
         return marked(this.input, { sanitize: true })
       }
     },
     methods: {
-      toggleEditFun: function () {
+      toggleEditFun () {
         this.toggleEdit = !this.toggleEdit
       }
     },
     watch: {
-      input: function(newInput) {
+      input(newInput) {
         console.log(newInput);
         localStorage.setItem('input',newInput)
       }

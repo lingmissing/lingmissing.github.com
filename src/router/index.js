@@ -9,6 +9,7 @@ import Resume from './OnlineTools/Resume'
 import Reg from './OnlineTools/Reg'
 import Base from './OnlineTools/Base'
 import Draw from './OnlineTools/Draw'
+import CompressImg from './OnlineTools/CompressImg'
 
 import Doraemon from './OnlyCss/Doraemon'
 
@@ -83,6 +84,11 @@ export default new Router({
       name: 'Doraemon',
       path: '/doraemon',
       component: Doraemon
+    },
+    {
+      name: 'CompressImg',
+      path: '/compress',
+      component: CompressImg
     }
   ]
 })

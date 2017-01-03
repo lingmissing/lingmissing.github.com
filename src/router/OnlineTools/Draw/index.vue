@@ -1,5 +1,5 @@
 <template>
-  <div class="inner" @mousemove="beginPath($event)">
+  <div class="inner draw" @mousemove="beginPath($event)">
     <div class="wrap">
       <canvas 
         id="canvas" 
@@ -9,6 +9,9 @@
         @mousedown="canvasDown($event)" 
         @mouseup="canvasUp($event)"
         @mousemove="canvasMove($event)"
+        @touchstart="canvasDown($event)" 
+        @touchend="canvasUp($event)"
+        @touchmove="canvasMove($event)"
       >
       </canvas>
       <div id="control" class="fl">
@@ -47,7 +50,7 @@
         <!-- 生成图像-->
         <div id="canvas-drawImage">
           <h5>生成图像</h5>
-          <button class="drawImage" @click="getImage()">生成图像</button>
+          <button class="drawImage" @click="getImage()">预览</button>
         </div>
       </div>
     </div>
@@ -61,12 +64,39 @@
   </div>
 </template>
 
-<style scoped>
-  .inner {
+<style>
+  @media screen and (max-width: 700px) {
+    #img-box,
+    #canvas-drawImage h5,
+    #canvas-brush {
+      display: none;
+    }
+    #canvas-drawImage button{
+      width: auto;
+      position: absolute;
+      flex: 1;
+    }
+    .wrap #control {
+      width: 100%;
+      height: auto;
+      display: flex;
+      flex-direction: row;
+      text-align: center;
+    }
+  }
+  .fix-body {
+    position: fixed !important;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    overflow: hidden;
+  }
+  .inner.draw {
     display: flex;
     flex-direction: row;
   }
-  .inner h5 {
+  .draw h5 {
     margin-bottom: 10px;
   }
   #img-box {
@@ -215,12 +245,14 @@
       this.initDraw()
       this.setCanvasStyle()
       document.querySelector('#footer').classList.add('hide-footer')
+      document.querySelector('body').classList.add('fix-body')
     },
     destroyed() {
       document.querySelector('#footer').classList.remove('hide-footer')
+      document.querySelector('body').classList.remove('fix-body')
     },
     computed: {
-      controls: function() {
+      controls() {
         return [{
                   title: '上一步',
                   action: 'prev',
@@ -237,25 +269,44 @@
       }
     },
     methods: {
-      removeImg:function(src) {
+      isPc() {
+        const userAgentInfo = navigator.userAgent
+        const Agents = new Array("Android", "iPhone", "SymbianOS", "Windows Phone", "iPad", "iPod") 
+        let flag = true
+        for (let v = 0; v < Agents.length; v++) {    
+          if (userAgentInfo.indexOf(Agents[v]) > 0) { 
+            flag = false
+            break
+          }    
+        }    
+        return flag  
+      },
+      removeImg(src) {
         this.imgUrl = this.imgUrl.filter(item => item !== src)
       },
-      initDraw: function () {
+      initDraw() {
         const preData = this.context.getImageData(0, 0, 600, 400)
         //空绘图表面进栈
         this.middleAry.push(preData)
       },
-      canvasMove: function(e) {
+      canvasMove(e) {
         if(this.canvasMoveUse) {
           console.log('canvasMove')
           const t = e.target
-          const canvasX = e.clientX - t.parentNode.offsetLeft
-          const canvasY = e.clientY - t.parentNode.offsetTop
+          let canvasX
+          let canvasY
+          if(this.isPc()){
+            canvasX = e.clientX - t.parentNode.offsetLeft
+            canvasY = e.clientY - t.parentNode.offsetTop
+          }else {
+            canvasX = e.changedTouches[0].clientX - t.parentNode.offsetLeft
+            canvasY = e.changedTouches[0].clientY - t.parentNode.offsetTop
+          }
           this.context.lineTo(canvasX, canvasY)
           this.context.stroke()
         }
       },
-      beginPath: function(e){
+      beginPath(e){
         const canvas = document.querySelector('#canvas')
         if (e.target !== canvas) {
           console.log('beginPath')
@@ -263,7 +314,7 @@
         }
       },
       // mouseup
-      canvasUp: function(e){
+      canvasUp(e){
         console.log('canvasUp')
         const preData = this.context.getImageData(0, 0, 600, 400)
         if (!this.nextDrawAry.length) {
@@ -279,7 +330,7 @@
         this.canvasMoveUse = false
       },
       // mousedown
-      canvasDown: function(e) {
+      canvasDown(e) {
         console.log('canvasDown');
         this.canvasMoveUse = true
         // client是基于整个页面的坐标
@@ -297,15 +348,15 @@
         this.preDrawAry.push(preData)
       },
       // 设置颜色
-      setColor: function(color) {
+      setColor(color) {
         this.config.lineColor = color
       },
       // 设置笔刷大小
-      setBrush: function(type) {
+      setBrush(type) {
         this.config.lineWidth = type
       },
       // 操作
-      controlCanvas: function(action) {
+      controlCanvas(action) {
         switch (action) {
           case 'prev':
             if (this.preDrawAry.length) {
@@ -332,13 +383,17 @@
         }
       },
       // 生成图片
-      getImage: function() {
+      getImage() {
         const canvas = document.querySelector('#canvas')
         const src = canvas.toDataURL('image/png')
         this.imgUrl.push(src)
+        if(!this.isPc()) {
+          // window.open(`data:text/plain,${src}`)
+          window.location.href = src
+        }
       },
       // 设置绘画配置
-      setCanvasStyle: function () {
+      setCanvasStyle() {
         this.context.lineWidth = this.config.lineWidth
         this.context.shadowBlur = this.config.shadowBlur
         this.context.shadowColor = this.config.lineColor
