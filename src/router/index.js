@@ -9,7 +9,10 @@ import Resume from './OnlineTools/Resume'
 import Reg from './OnlineTools/Reg'
 import Base from './OnlineTools/Base'
 import Draw from './OnlineTools/Draw'
-import CompressImg from './OnlineTools/CompressImg'
+
+import DealWidthImage from './OnlineTools/DealWidthImage'
+import compressImage from './OnlineTools//DealWidthImage/compress'
+import cropImage from './OnlineTools/DealWidthImage/crop'
 
 import Doraemon from './OnlyCss/Doraemon'
 
@@ -86,9 +89,13 @@ export default new Router({
       component: Doraemon
     },
     {
-      name: 'CompressImg',
-      path: '/compress',
-      component: CompressImg
+      name: 'DealWidthImage',
+      path: '/dealimg',
+      component: DealWidthImage,
+      children: [
+        { path: 'compress', component: compressImage },
+        { path: 'crop', component: cropImage }
+      ]
     }
   ]
 })

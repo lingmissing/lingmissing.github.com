@@ -11,6 +11,13 @@
   </div>
 </template>
 
+<style>
+#wrapper {
+  background: url('images/elaine.png') no-repeat;
+  background-size: 50px 50px;
+}
+</style>
+
 
 <script>
 

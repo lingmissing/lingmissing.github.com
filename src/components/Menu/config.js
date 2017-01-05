@@ -4,7 +4,7 @@ export default [{
   outerLink: false
 }, {
   name: '我的作品集',
-  link: 'archives',
+  link: '/archives',
   outerLink: false
 }, {
   name: '我的博客',
@@ -12,6 +12,6 @@ export default [{
   outerLink: true
 }, {
   name: '关于我',
-  link: 'about',
+  link: '/about',
   outerLink: false
 }]

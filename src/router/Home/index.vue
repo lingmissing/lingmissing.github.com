@@ -14,6 +14,7 @@
   </div>
 </template>
 
+
 <script>
   import Article from 'components/Article'
   import moduleList from './config'

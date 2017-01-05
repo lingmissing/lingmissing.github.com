@@ -325,7 +325,6 @@
           this.middleAry = this.middleAry.concat(this.preDrawAry)
           this.middleAry.push(preData)
           this.nextDrawAry = []
-          this.nextControlClass = 'next-control'
         }
         this.canvasMoveUse = false
       },
