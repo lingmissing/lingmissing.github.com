@@ -357,9 +357,9 @@
       return {
         canMove: false,
         cropSrc: '',
-        left: 17,
-        top: 17,
-        right: 222,
+        left: 0,
+        top: 0,
+        right: 100,
         bottom: 100
       }
     },
@@ -411,6 +411,7 @@
       },
       dragLine(e,type) {
         if(this.canMove) {
+          this.cropSrc = ''
           const jcropHolder = document.querySelector('.jcrop-holder')
           const y = e.clientY + document.body.scrollTop - jcropHolder.offsetTop
           const x = e.clientX - jcropHolder.offsetLeft
@@ -458,20 +459,23 @@
             const top = y - height / 2
             const bottom = y + height /2
 
-            this.left = left >= 0 ? (right > this.picInfo.width ? this.picInfo.width - width: left) : 0
-            this.right = left >= 0 ? (right > this.picInfo.width ? this.picInfo.width : right) : this.width
-            this.top = top >= 0 ? (bottom > this.picInfo.height ? this.picInfo.height - height: top)  : 0
-            this.bottom = top >= 0 ? (bottom > this.picInfo.height ? this.picInfo.height : bottom) : this.height
+            this.cropSrc = ''
+
+            this.left = left >= 0 ? (right > picInfo.width ? picInfo.width - width: left) : 0
+            this.right = left >= 0 ? (right > picInfo.width ? picInfo.width : right) : width
+            this.top = top >= 0 ? (bottom > picInfo.height ? picInfo.height - height: top)  : 0
+            this.bottom = top >= 0 ? (bottom > picInfo.height ? picInfo.height : bottom) : height
           }
       },
       cropImage() {
-        var c = document.createElement('canvas')
-        var ctx = c.getContext('2d')
-        c.width = this.width
-        c.height = this.height
+        const { width,height,left,right,top,bottom } = this
+        const c = document.createElement('canvas')
         const img = document.querySelector('.big-img')
+        const ctx = c.getContext('2d')
+        c.width = width
+        c.height = height
 
-        ctx.drawImage(img,this.left,this.top,this.width,this.height,0,0,this.width,this.height)
+        ctx.drawImage(img,left,top,width,height,0,0,width,height)
         this.cropSrc = c.toDataURL('image/jpeg')
       }
     }

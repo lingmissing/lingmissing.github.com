@@ -14,4 +14,8 @@ export default [{
   id:5,
   title: '在线涂鸦工具',
   link: '#/draw'
+},{
+  id:6,
+  title: '图片处理（压缩，裁切）',
+  link: '#/dealimg/compress'
 }]

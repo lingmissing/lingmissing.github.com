@@ -20,6 +20,9 @@ export default [{
         },{
           title: '在线涂鸦工具',
           link: '#/draw'
+        },{
+          title: '图片处理（压缩，裁切）',
+          link: '#/dealimg/compress'
         }]
 },{
   title: 'CSS动画',
