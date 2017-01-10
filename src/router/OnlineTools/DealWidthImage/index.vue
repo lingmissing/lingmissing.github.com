@@ -18,7 +18,7 @@
 
 <script>
 export default {
-  data() {
+  data () {
     return {
       picInfo: {
         fileName: '',
@@ -32,18 +32,18 @@ export default {
     this.$emit('setNav', '图像处理')
   },
   methods: {
-    clearImageInfo() {
+    clearImageInfo () {
       this.picInfo = {}
     },
-    getBase(e) {
+    getBase (e) {
       const _this = this
       const img = e.target.files[0]
-      // 判断是否图片  
+      // 判断是否图片
       if (!img) {
         return
       }
-      // 判断图片格式  
-      if (!(img.type.indexOf('image') == 0 && img.type && /\.(?:jpg|png|gif)$/.test(img.name))) {
+      // 判断图片格式
+      if (!(img.type.indexOf('image') === 0 && img.type && /\.(?:jpg|png|gif)$/.test(img.name))) {
         alert('图片只能是jpg,gif,png')
         return
       }

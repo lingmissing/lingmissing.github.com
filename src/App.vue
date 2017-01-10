@@ -25,7 +25,7 @@
   import Header from 'components/Header'
 
   export default {
-    data() {
+    data () {
       return {
         navigator: ''
       }
@@ -36,15 +36,15 @@
       'case-header': Header
     },
     methods: {
-      openNav: function(status) {
+      openNav (status) {
         const body = document.querySelector('body')
-        if(status) {
-          body.setAttribute('class','is-menu-visible')
-        }else {
+        if (status) {
+          body.setAttribute('class', 'is-menu-visible')
+        } else {
           body.removeAttribute('class')
         }
       },
-      setNav: function(name) {
+      setNav (name) {
         this.navigator = name
       }
     }

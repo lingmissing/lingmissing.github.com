@@ -83,7 +83,7 @@ textarea {
   import marked from 'marked'
 
   export default {
-    data() {
+    data () {
       return {
         input: localStorage.getItem('input') || '# Have a nice writing',
         toggleEdit: true
@@ -100,9 +100,9 @@ textarea {
       }
     },
     watch: {
-      input(newInput) {
-        console.log(newInput);
-        localStorage.setItem('input',newInput)
+      input (newInput) {
+        console.log(newInput)
+        localStorage.setItem('input', newInput)
       }
     }
   }

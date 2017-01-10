@@ -20,13 +20,13 @@
   import moduleList from './config'
 
   export default {
-    data() {
+    data () {
       return {
         moduleList
       }
     },
-    created() {
-      this.$emit('setNav','时光的涂鸦墙')
+    created () {
+      this.$emit('setNav', '时光的涂鸦墙')
     },
     components: {
       'case-article': Article

@@ -16,18 +16,18 @@
 <script>
   import menuList from './config'
   export default {
-    data() {
+    data () {
       return {
         menuList
       }
     },
     methods: {
-      changeRoute: function(link,isOuter) {
-        this.$emit('openNav',false)
-        if(!isOuter) {
+      changeRoute: function (link, isOuter) {
+        this.$emit('openNav', false)
+        if (!isOuter) {
           this.$router.push(link)
           // this.$router.push({path: '/', query: {type: typecode}})
-        }else {
+        } else {
           window.open(link)
         }
       }

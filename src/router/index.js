@@ -4,17 +4,17 @@ import Home from './Home'
 import Archives from './Archives'
 import About from './About'
 
-import Markdown from './OnlineTools/Markdown'
-import Resume from './OnlineTools/Resume'
-import Reg from './OnlineTools/Reg'
-import Base from './OnlineTools/Base'
-import Draw from './OnlineTools/Draw'
+import Markdown from './onlineTools/Markdown'
+import Resume from './onlineTools/Resume'
+import Reg from './onlineTools/Reg'
+import Base from './onlineTools/Base'
+import Draw from './onlineTools/Draw'
 
-import DealWidthImage from './OnlineTools/DealWidthImage'
-import compressImage from './OnlineTools//DealWidthImage/compress'
-import cropImage from './OnlineTools/DealWidthImage/crop'
+import DealWidthImage from './onlineTools/DealWidthImage'
+import compressImage from './onlineTools//DealWidthImage/compress'
+import cropImage from './onlineTools/DealWidthImage/crop'
 
-import Doraemon from './OnlyCss/Doraemon'
+import Doraemon from './onlyCss/Doraemon'
 
 
 
@@ -24,17 +24,17 @@ import Doraemon from './OnlyCss/Doraemon'
 
 // const About = resolve => require(['./About'], resolve)
 
-// const Markdown = resolve => require(['./OnlineTools/Markdown'], resolve)
+// const Markdown = resolve => require(['./onlineTools/Markdown'], resolve)
 
-// const Resume = resolve => require(['./OnlineTools/Resume'], resolve)
+// const Resume = resolve => require(['./onlineTools/Resume'], resolve)
 
-// const Reg = resolve => require(['./OnlineTools/Reg'], resolve)
+// const Reg = resolve => require(['./onlineTools/Reg'], resolve)
 
-// const Base = resolve => require(['./OnlineTools/Base'], resolve)
+// const Base = resolve => require(['./onlineTools/Base'], resolve)
 
-// const Draw = resolve => require(['./OnlineTools/Draw'], resolve)
+// const Draw = resolve => require(['./onlineTools/Draw'], resolve)
 
-// const Doraemon = resolve => require(['./OnlyCss/Doraemon'], resolve)
+// const Doraemon = resolve => require(['./onlyCss/Doraemon'], resolve)
 
 
 

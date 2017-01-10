@@ -609,9 +609,9 @@
 </style>
 
 <script>
-	export default {
-    created() {
-      this.$emit('setNav','哆啦A梦')
-    }
-	}
+export default {
+  created () {
+    this.$emit('setNav', '哆啦A梦')
+  }
+}
 </script>

@@ -26,13 +26,13 @@
 <script>
   import demoList from './config'
   export default {
-    data() {
+    data () {
       return {
         demoList
       }
     },
-    created() {
-      this.$emit('setNav','我的作品集')
+    created () {
+      this.$emit('setNav', '我的作品集')
     }
   }
 </script>

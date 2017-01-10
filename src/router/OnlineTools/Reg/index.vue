@@ -132,7 +132,7 @@
 
 <script>
   export default {
-    data() {
+    data () {
       return {
         reg: {
           exe: '',
@@ -141,19 +141,19 @@
         regList: [{
           name: '匹配中文字符',
           reg: '^[1-9]\\d*|0$'
-        },{
+        }, {
           name: '匹配Email地址',
           reg: "[\\w!#$%&'*+/=?^_`{|}~-]+(?:\\.[\\w!#$%&'*+/=?^_`{|}~-]+)*@(?:[\\w](?:[\\w-]*[\\w])?\.)+[\\w](?:[\\w-]*[\\w])?"
-        },{
+        }, {
           name: '匹配身份证',
           reg: '\\d{6}(18|19|20)?\\d{2}(0[1-9]|1[12])(0[1-9]|[12]\\d|3[01])\\d{3}(\\d|X)$'
-        },{
+        }, {
           name: '匹配正整数',
           reg: '^[1-9]\\d*$'
-        },{
+        }, {
           name: '匹配网址',
           reg: '[a-zA-z]+://[^\\s]*'
-        },{
+        }, {
           name: '匹配年-月-日',
           reg: '([0-9]{3}[1-9]|[0-9]{2}[1-9][0-9]{1}|[0-9]{1}[1-9][0-9]{2}|[1-9][0-9]{3})-(((0[13578]|1[02])-(0[1-9]|[12][0-9]|3[01]))|((0[469]|11)-(0[1-9]|[12][0-9]|30))|(02-(0[1-9]|[1][0-9]|2[0-8])))'
         }],
@@ -161,23 +161,23 @@
         result: ''
       }
     },
-    created() {
-      this.$emit('setNav','正则表达式')
+    created () {
+      this.$emit('setNav', '正则表达式')
     },
     watch: {
-      text() {
+      text () {
         this.result = ''
       }
     },
     methods: {
-      getResult() {
-        const testReg = `/^${this.reg}$/` 
-        const { exe,globalSearch } = this.reg
-        const matchReg = new RegExp(exe,globalSearch.join(''))
+      getResult () {
+        // const testReg = `/^${this.reg}$/`
+        const { exe, globalSearch } = this.reg
+        const matchReg = new RegExp(exe, globalSearch.join(''))
         const matchResult = this.text.match(matchReg)
         this.result = matchResult || []
       },
-      setReg(reg) {
+      setReg (reg) {
         this.reg.exe = reg
         this.getResult()
       }

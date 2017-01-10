@@ -353,7 +353,7 @@
 
 <script>
   export default {
-    data() {
+    data () {
       return {
         canMove: false,
         cropSrc: '',
@@ -364,16 +364,16 @@
       }
     },
     props: {
-      picInfo: Object,
+      picInfo: Object
     },
     computed: {
-      width() {
+      width () {
         return this.right - this.left
       },
-      height() {
+      height () {
         return this.bottom - this.top
       },
-      lineStyle() {
+      lineStyle () {
         return {
           position: 'absolute',
           zIndex: 300,
@@ -383,7 +383,7 @@
           left: `${this.left}px`
         }
       },
-      cropImgStyle() {
+      cropImgStyle () {
         return {
           position: 'absolute',
           width: `${this.picInfo.width}px`,
@@ -392,35 +392,32 @@
           left: `-${this.left}px`
         }
       },
-      picSize() {
+      picSize () {
         return {
           width: `${this.picInfo.width}px`,
           height: `${this.picInfo.height}px`
         }
       }
     },
-    watch: {
-      
-    },
-    destroyed() {
+    destroyed () {
       this.$emit('clearImageInfo')
     },
     methods: {
-      toggleMove(type) {
+      toggleMove (type) {
         this.canMove = type
       },
-      dragLine(e,type) {
-        if(this.canMove) {
+      dragLine (e, type) {
+        if (this.canMove) {
           this.cropSrc = ''
           const jcropHolder = document.querySelector('.jcrop-holder')
           const y = e.clientY + document.body.scrollTop - jcropHolder.offsetTop
           const x = e.clientX - jcropHolder.offsetLeft
           switch (type) {
             case 'top':
-              this.top = y ? y : 0            
+              this.top = y || 0
               break
             case 'left':
-              this.left = x ? x : 0
+              this.left = x || 0
               break
             case 'bottom':
               this.bottom = y <= this.picInfo.height ? y : this.picInfo.height
@@ -429,53 +426,53 @@
               this.right = x <= this.picInfo.width ? x : this.picInfo.width
               break
             case 'topLeft':
-              this.top = y ? y : 0   
-              this.left = x ? x : 0
+              this.top = y || 0
+              this.left = x || 0
               break
             case 'topRight':
-              this.top = y ? y : 0  
+              this.top = y || 0
               this.right = x <= this.picInfo.width ? x : this.picInfo.width
               break
-            case 'bottomLeft': 
+            case 'bottomLeft':
               this.bottom = y <= this.picInfo.height ? y : this.picInfo.height
-              this.left = x ? x : 0
+              this.left = x || 0
               break
-            case 'bottomRight': 
+            case 'bottomRight':
               this.bottom = y <= this.picInfo.height ? y : this.picInfo.height
               this.right = x <= this.picInfo.width ? x : this.picInfo.width
               break
           }
         }
       },
-      drag(e) {
-        if(this.canMove) {
-            const jcropHolder = document.querySelector('.jcrop-holder')
-            const x = e.clientX - jcropHolder.offsetLeft
-            const y = e.clientY + document.body.scrollTop - jcropHolder.offsetTop
-            console.log(x,y)
-            const { picInfo,width,height } = this
-            const left = x - width / 2
-            const right = x + width / 2
-            const top = y - height / 2
-            const bottom = y + height /2
+      drag (e) {
+        if (this.canMove) {
+          const jcropHolder = document.querySelector('.jcrop-holder')
+          const x = e.clientX - jcropHolder.offsetLeft
+          const y = e.clientY + document.body.scrollTop - jcropHolder.offsetTop
+          console.log(x, y)
+          const { picInfo, width, height } = this
+          const left = x - width / 2
+          const right = x + width / 2
+          const top = y - height / 2
+          const bottom = y + height / 2
 
-            this.cropSrc = ''
+          this.cropSrc = ''
 
-            this.left = left >= 0 ? (right > picInfo.width ? picInfo.width - width: left) : 0
-            this.right = left >= 0 ? (right > picInfo.width ? picInfo.width : right) : width
-            this.top = top >= 0 ? (bottom > picInfo.height ? picInfo.height - height: top)  : 0
-            this.bottom = top >= 0 ? (bottom > picInfo.height ? picInfo.height : bottom) : height
-          }
+          this.left = left >= 0 ? (right > picInfo.width ? picInfo.width - width : left) : 0
+          this.right = left >= 0 ? (right > picInfo.width ? picInfo.width : right) : width
+          this.top = top >= 0 ? (bottom > picInfo.height ? picInfo.height - height : top) : 0
+          this.bottom = top >= 0 ? (bottom > picInfo.height ? picInfo.height : bottom) : height
+        }
       },
-      cropImage() {
-        const { width,height,left,right,top,bottom } = this
+      cropImage () {
+        const { width, height, left, top } = this
         const c = document.createElement('canvas')
         const img = document.querySelector('.big-img')
         const ctx = c.getContext('2d')
         c.width = width
         c.height = height
 
-        ctx.drawImage(img,left,top,width,height,0,0,width,height)
+        ctx.drawImage(img, left, top, width, height, 0, 0, width, height)
         this.cropSrc = c.toDataURL('image/jpeg')
       }
     }

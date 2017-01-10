@@ -27,17 +27,17 @@
 
 <script>
   export default {
-    data() {
+    data () {
       return {
         quality: 100,
-        compressLink: '',
+        compressLink: ''
       }
     },
     props: {
       picInfo: Object
     },
     computed: {
-      showHeight() {
+      showHeight () {
         return 500 / this.picInfo.width * this.picInfo.height
       }
     },
@@ -47,22 +47,22 @@
     watch: {
       picInfo: {
         deep: true,
-        handler: function(newVal,oldVal) {
+        handler: function (newVal, oldVal) {
           this.compressLink = newVal.src
         }
       }
     },
     methods: {
-      compress() {
-        const source_img_obj = document.querySelector('.prev')
+      compress () {
+        const sourceImgObj = document.querySelector('.prev')
         const canvas = document.createElement('canvas')
         const context = canvas.getContext('2d')
 
         canvas.width = this.picInfo.width
         canvas.height = this.picInfo.height
 
-        context.drawImage(source_img_obj, 0, 0, this.picInfo.width, this.picInfo.height, 0, 0, this.picInfo.width, this.picInfo.height)
-        const newImageData = canvas.toDataURL('image/jpeg', this.quality/100 )
+        context.drawImage(sourceImgObj, 0, 0, this.picInfo.width, this.picInfo.height, 0, 0, this.picInfo.width, this.picInfo.height)
+        const newImageData = canvas.toDataURL('image/jpeg', this.quality / 100)
         this.compressLink = newImageData
       }
     }

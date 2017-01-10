@@ -35,7 +35,7 @@
 <script>
   import footerList from './config'
   export default {
-    data() {
+    data () {
       return {
         footerList
       }

@@ -67,9 +67,9 @@
 </style>
 
 <script>
-  export default { 
-    created() {
-      this.$emit('setNav','关于我')
+  export default {
+    created () {
+      this.$emit('setNav', '关于我')
     }
   }
 </script>
