@@ -11,7 +11,7 @@
     components: {
 
     },
-    data() {
+    data () {
       return {
 
       }
@@ -22,7 +22,7 @@
     computed: {
       
     },
-    created() {
+    created () {
       
     },
     mounted () {
