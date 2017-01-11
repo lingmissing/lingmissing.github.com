@@ -135,7 +135,7 @@
     overflow: hidden;
   }
   .fl{
-    float: left;
+    /*float: left;*/
     display: inline;
   }
   #canvas{

@@ -4234,14 +4234,14 @@ body.is-touch .tiles article .content {
   height: 2em;
 }
 
-#header nav {
+#head-nav {
   position: fixed;
   right: 2em;
   top: 2em;
   z-index: 10000;
 }
 
-#header nav ul {
+#head-nav ul {
   display: -moz-flex;
   display: -webkit-flex;
   display: -ms-flex;
@@ -4255,12 +4255,12 @@ body.is-touch .tiles article .content {
   padding: 0;
 }
 
-#header nav ul li {
+#head-nav ul li {
   display: block;
   padding: 0;
 }
 
-#header nav ul li a {
+#head-nav ul li a {
   display: block;
   position: relative;
   height: 3em;
@@ -4275,7 +4275,7 @@ body.is-touch .tiles article .content {
   text-transform: uppercase;
 }
 
-#header nav ul li a[href="#menu"] {
+#head-nav ul li a[href="#menu"] {
   -webkit-tap-highlight-color: transparent;
   width: 4em;
   text-indent: 4em;
@@ -4285,8 +4285,8 @@ body.is-touch .tiles article .content {
   white-space: nowrap;
 }
 
-#header nav ul li a[href="#menu"]:before,
-#header nav ul li a[href="#menu"]:after {
+#head-nav ul li a[href="#menu"]:before,
+#head-nav ul li a[href="#menu"]:after {
   -moz-transition: opacity 0.2s ease;
   -webkit-transition: opacity 0.2s ease;
   -ms-transition: opacity 0.2s ease;
@@ -4303,21 +4303,21 @@ body.is-touch .tiles article .content {
   background-size: 2em 2em;
 }
 
-#header nav ul li a[href="#menu"]:before {
+#head-nav ul li a[href="#menu"]:before {
   background-image: url("data:image/svg+xml;charset=utf8, %3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100' preserveAspectRatio='none'%3E%3Cstyle%3Eline %7B stroke-width: 8px%3B stroke: %23f2849e%3B %7D%3C/style%3E%3Cline x1='0' y1='25' x2='100' y2='25' /%3E%3Cline x1='0' y1='50' x2='100' y2='50' /%3E%3Cline x1='0' y1='75' x2='100' y2='75' /%3E%3C/svg%3E");
   opacity: 0;
 }
 
-#header nav ul li a[href="#menu"]:after {
+#head-nav ul li a[href="#menu"]:after {
   background-image: url("data:image/svg+xml;charset=utf8, %3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100' preserveAspectRatio='none'%3E%3Cstyle%3Eline %7B stroke-width: 8px%3B stroke: %23585858%3B %7D%3C/style%3E%3Cline x1='0' y1='25' x2='100' y2='25' /%3E%3Cline x1='0' y1='50' x2='100' y2='50' /%3E%3Cline x1='0' y1='75' x2='100' y2='75' /%3E%3C/svg%3E");
   opacity: 1;
 }
 
-#header nav ul li a[href="#menu"]:hover:before {
+#head-nav ul li a[href="#menu"]:hover:before {
   opacity: 1;
 }
 
-#header nav ul li a[href="#menu"]:hover:after {
+#head-nav ul li a[href="#menu"]:hover:after {
   opacity: 0;
 }
 
@@ -4326,13 +4326,13 @@ body.is-touch .tiles article .content {
     padding: 4em 0 0.1em 0;
   }
 
-  #header nav {
+  #head-nav {
     right: 0.5em;
     top: 0.5em;
   }
 
-  #header nav ul li a[href="#menu"]:before,
-  #header nav ul li a[href="#menu"]:after {
+  #head-nav ul li a[href="#menu"]:before,
+  #head-nav ul li a[href="#menu"]:after {
     background-size: 1.5em 1.5em;
   }
 }

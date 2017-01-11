@@ -18,9 +18,7 @@ import cropImage from './onlineTools/DealWidthImage/crop'
 
 import Doraemon from './onlyCss/Doraemon'
 
-
 Vue.use(Router)
-
 
 export default new Router({
   mode: 'hash',
