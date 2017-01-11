@@ -28,12 +28,17 @@
 <span class="b">I</span>.<span class="g">addHobbit</span>('<span class="r">Ukulele</span>').<span class="g">addHobbit</span>('<span class="r">Painting</span>').<span class="g">addHobbit</span>('<span class="r">coding</span>')
           </code>
         </pre>
+
+        <router-link to="/resume" class="look-resume">look my resume</router-link>
       </div>
     </div>
   </div>
 </template>
 
 <style>
+  .look-resume {
+    float: right;
+  }
   .anthor {
     text-align: right;
   }
