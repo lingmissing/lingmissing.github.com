@@ -1,7 +1,7 @@
 'use strict'
 
 module.exports = {
-  port: '5004',
+  port: '5005',
   title: '时光的涂鸦墙',
   vendor: [
     'vue',
