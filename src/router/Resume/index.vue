@@ -320,6 +320,9 @@
         }
       }
     },
+    mounted () {
+      document.body.scrollTop = 0
+    },
     methods: {
       emailFor () {
         console.log(this.form)

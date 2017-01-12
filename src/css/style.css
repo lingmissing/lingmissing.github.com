@@ -3903,6 +3903,7 @@ button:disabled,
   position: relative;
   width: calc(33.33333% - 2.5em);
   margin: 2.5em 0 0 2.5em;
+  opacity: 0.4;
 }
 
 .tiles article > .image {
@@ -3915,6 +3916,7 @@ button:disabled,
   width: 100%;
   border-radius: 4px;
   overflow: hidden;
+  filter: blur(3px);
 }
 
 .tiles article > .image img {

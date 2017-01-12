@@ -135,8 +135,8 @@
     overflow: hidden;
   }
   .fl{
-    /*float: left;*/
-    display: inline;
+    float: left;
+    display: block;
   }
   #canvas{
     border-right: 1px #585858 solid;
