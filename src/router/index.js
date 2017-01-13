@@ -17,6 +17,7 @@ import compressImage from './onlineTools//DealWidthImage/compress'
 import cropImage from './onlineTools/DealWidthImage/crop'
 
 import Doraemon from './onlyCss/Doraemon'
+import Ui from './onlyCss/Ui'
 
 Vue.use(Router)
 
@@ -62,6 +63,11 @@ export default new Router({
           name: 'Doraemon',
           path: '/doraemon',
           component: Doraemon
+        },
+        {
+          name: 'Ui',
+          path: '/ui',
+          component: Ui
         },
         {
           name: 'DealWidthImage',

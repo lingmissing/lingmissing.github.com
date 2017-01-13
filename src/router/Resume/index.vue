@@ -37,8 +37,8 @@
 
 
       <h2><span><em>工作经历</em></span></h2>
-      <section class="portfolio" v-for="item in config.work">
-        <div class="work-item">
+      <section class="portfolio work-box">
+        <div class="work-item"  v-for="item in config.work">
           <p><strong>{{item.name}}</strong></p>
           <p><strong>担任职位：</strong>{{item.job}}</p>
           <p><strong>工作内容：</strong>
@@ -78,6 +78,9 @@
 </template>
 
 <style scoped>
+.work-box {
+  flex-wrap: nowrap;
+}
 #contact .title{
   text-align: center;
   font-weight: bold;
@@ -232,6 +235,7 @@
 	box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
   padding: 20px;
   margin-bottom: 20px;
+  margin-right: 20px;
 }
 .portfolio img {
 	max-width: 100%;
