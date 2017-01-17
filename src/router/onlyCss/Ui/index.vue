@@ -110,6 +110,7 @@
   .ui-box {
     margin-bottom: 20px;
   }
+  /* tags */
   .pinks-tabs {
     border-bottom: 1px solid #585858;
     display: flex;
@@ -156,6 +157,7 @@
     background: #f2849e;
     border-color: #f2849e;
   }
+  /* progress */
   .pinks-progress {
     display: block;
     width: 200px;

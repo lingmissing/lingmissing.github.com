@@ -19,6 +19,9 @@ import cropImage from './onlineTools/DealWidthImage/crop'
 import Doraemon from './onlyCss/Doraemon'
 import Ui from './onlyCss/Ui'
 
+import Douban from './onlineTools/Douban'
+import Calculator from './onlineTools//Calculator'
+
 Vue.use(Router)
 
 export default new Router({
@@ -68,6 +71,16 @@ export default new Router({
           name: 'Ui',
           path: '/ui',
           component: Ui
+        },
+        {
+          name: 'Douban',
+          path: '/douban',
+          component: Douban
+        },
+        {
+          name: 'Calculator',
+          path: '/cal',
+          component: Calculator
         },
         {
           name: 'DealWidthImage',

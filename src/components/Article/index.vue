@@ -1,7 +1,7 @@
 <template>
   <article :class="`style${item.id}`">
     <span class="image">
-      <img src="../../assets/img8.png"/>
+      <img src="../../images/elaine.png"/>
     </span>
     <a :href="item.link">
       <h2>{{item.title}}</h2>

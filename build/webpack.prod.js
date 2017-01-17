@@ -1,5 +1,5 @@
 'use strict'
-
+const fs = require('fs-extra')
 const exec = require('child_process').execSync
 const webpack = require('webpack')
 const ExtractTextPlugin = require('extract-text-webpack-plugin')
@@ -9,6 +9,7 @@ const base = require('./webpack.base')
 const config = require('./config')
 
 exec('rm -rf dist/')
+fs.copySync('static/', 'dist/')
 
 base.entry.vendor = config.vendor
 base.output.filename = '[name].[chunkhash:8].js'

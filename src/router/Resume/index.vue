@@ -37,16 +37,20 @@
 
 
       <h2><span><em>工作经历</em></span></h2>
-      <section class="portfolio work-box">
-        <div class="work-item"  v-for="item in config.work">
-          <p><strong>{{item.name}}</strong></p>
-          <p><strong>担任职位：</strong>{{item.job}}</p>
-          <p><strong>工作内容：</strong>
-          <ul>
-            <li v-for="c in item.content">{{c}}</li>
-          </ul>
+      <section class="portfolio">
+        <div class="culumn">
+          <div v-for="item in config.work">
+            <p><strong>{{item.name}}</strong></p>
+            <p><strong>担任职位：</strong>{{item.job}}</p>
+            <p><strong>工作内容：</strong></p>  
+            <ul>
+              <li v-for="c in item.content">{{c}}</li>
+            </ul>
+          </div>
         </div>
       </section>
+
+
 
       <h2><span><em>CONTACT</em></span></h2>
 
