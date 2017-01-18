@@ -6,7 +6,7 @@
   </div>
 </template>
 
-<style scoped>
+<style>
 
 @media (max-width:700px) {
   #editor {
@@ -16,8 +16,14 @@
     height: 50%;
   }
 }
+#editor blockquote p {
+  margin-bottom: 0;
+}
+#editor ul {
+  padding-left: 2em;
+}
 #editor {
-  color: #34495e;
+  color: #333;
   font-family: 'Monaco', courier, monospace;
   height: 100%;
   display: flex;
@@ -30,13 +36,13 @@
   background: #fff;
   z-index: 10
 }
-textarea, .show-md {
+#editor textarea, #editor .show-md {
   flex: 1;
   overflow-y: auto;
   padding: 0 20px;
 }
 
-textarea {
+#editor textarea {
   border: none;
   border-right: 1px solid #ccc;
   resize: none;
@@ -46,23 +52,23 @@ textarea {
   padding: 20px;
 }
 
-.show-md code {
+#editor .show-md code {
   font-family: consolas,Menlo,"PingFang SC","Microsoft YaHei",monospace;
   background: #f7f7f7;
   font-size: 13px;
   line-height: 1.6;
   color: #4d4d4c;
 }
-.show-md pre {
+#editor .show-md pre {
   background: #f7f7f7;
   padding: 10px;
 }
-.show-md p {
+#editor .show-md p {
   font-size: 14px;
   line-height: 18px;
 }
 
-.toggle-screen {
+#editor .toggle-screen {
   position: fixed;
   bottom: 5px;
   right: 5px;
@@ -74,7 +80,7 @@ textarea {
   background-image: url('../../../images/icon.png');
   background-size: 20px 20px;
 }
-.toggle-screen:hover {
+#editor .toggle-screen:hover {
   opacity: 0.6;
 }
 </style>
@@ -85,7 +91,7 @@ textarea {
   export default {
     data () {
       return {
-        input: localStorage.getItem('input') || '# Have a nice writing',
+        input: localStorage.getItem('input') || '# happy day',
         toggleEdit: true
       }
     },

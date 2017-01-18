@@ -2,7 +2,7 @@
   <div class="inner">
     <div class="cal-box">
       <div class="cal-top">
-        <span class="cal-result" v-model="calResult"></span>
+        <span class="cal-result">{{calResult}}</span>
         <input type="text" v-model="calInput" align="right" class="cal-input">
       </div>
       <div class="cal-inner">
@@ -34,7 +34,7 @@
   }
   .cal-result {
     display: block;
-    text-align: right;
+    /*text-align: right;*/
   }
   .cal-top {
     margin: 0 5px;
@@ -49,8 +49,8 @@
         clickInfo: [],
         buttons: [
           '(', ')', '%', 'CE',
-          '7', '8', '9', '÷',
-          '4', '5', '6', 'x',
+          '7', '8', '9', '/',
+          '4', '5', '6', '*',
           '1', '2', '3', '-',
           '0', '.', '=', '+'
         ]
@@ -68,8 +68,15 @@
       setNum (item) {
         switch (item) {
           case '=':
+            this.calResult = this.calInput
+            /* eslint-disable */
+            const result = eval(this.calInput)
+            /* eslint-disable */
+            console.log(result)
+            this.clickInfo = [result]
             break
           case 'CE':
+            this.calResult = ''
             this.clickInfo = this.clickInfo.slice(0, this.clickInfo.length - 1)
             break
           default:
