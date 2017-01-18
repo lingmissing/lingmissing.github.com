@@ -29,7 +29,7 @@
 
 <script>
   import Article from 'components/Article'
-  import moduleList from './config'
+  import initData from '../../config'
 
   export default {
     components: {
@@ -37,12 +37,21 @@
     },
     data () {
       return {
-        moduleList,
+        moduleList: [],
         page: this.$route.query.page || 1
       }
     },
     created () {
+      const _this = this
       this.$emit('setNav', '时光的涂鸦墙')
+      function getHomeData (data) {
+        data.map(list => {
+          const { id, children } = list
+          id && _this.moduleList.push(list)
+          children && children.length && getHomeData(children)
+        })
+      }
+      getHomeData(initData)
     },
     computed: {
       total () {

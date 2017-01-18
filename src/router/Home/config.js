@@ -23,4 +23,8 @@ export default [{
   title: '图片处理（压缩，裁切）',
   desc: '利用canvas的toDataURL导出并压缩，使用cropImage实现图片切割',
   link: '#/dealimg/compress'
+}, {
+  id: 7,
+  title: '在线计算器',
+  link: '#/cal'
 }]

@@ -24,7 +24,7 @@
 </style>
 
 <script>
-  import demoList from './config'
+  import demoList from '../../config'
   export default {
     data () {
       return {
