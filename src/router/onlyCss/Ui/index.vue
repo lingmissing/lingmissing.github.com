@@ -12,33 +12,11 @@
       <button type="text" class="pinks-btn fit">按钮</button>
     </div>
     <div class="table-box ui-box">
-      <table>
-        <thead>
-          <tr>
-            <th v-for="item in table.head">{{item}}</th>
-          </tr>
-        </thead>
-        <tbody>  
-          <tr v-for="row in table.body">
-            <td v-for="item in row">{{item}}</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-    <div class="table-box ui-box">
       <div class="table-wrapper">
-              <table class="alt">
-        <thead>
-          <tr>
-            <th v-for="item in table.head">{{item}}</th>
-          </tr>
-        </thead>
-        <tbody>  
-          <tr v-for="row in table.body">
-            <td v-for="item in row">{{item}}</td>
-          </tr>
-        </tbody>
-      </table>
+        <l-table :head="table.head" :body="table.body"/>
+      </div>
+      <div class="table-wrapper">
+        <l-table type="alt" :head="table.head" :body="table.body"/>
       </div>
     </div>
 
@@ -54,18 +32,10 @@
         <input type="text" class="half">
         <input type="text" disabled="disabled" value="jjjjjj">
         <textarea rows="4" value="this is textarea"></textarea>
-        <select>
-          <option value="ss">222</option>
-          <option value="ss">222</option>
-          <option value="ss">222</option>
-        </select>
+        <l-select :data="select"/>
       </form>
       <div class="select-wrapper">
-        <select>
-          <option value="ss">222</option>
-          <option value="ss">222</option>
-          <option value="ss">222</option>
-        </select>
+        <l-select :data="select"/>
       </div>
     </div>
     <div class="tab-box ui-box">
@@ -76,37 +46,28 @@
       </div>
     </div>
     <div class="tag-box ui-box">
-      <span class="pinks-tag">tags</span>
-      <span class="pinks-tag special">tags</span>
+      <l-tag value="tags"/>
+      <l-tag value="tags" type="special"/>
     </div>
     <div class="progress-box ui-box">
-      <span class="pinks-progress">
-        <span class="current-progress" style="width:160px;" title="0.8"></span>
-      </span>
+      <l-progress percent="0.8"/>
     </div>
     <div class="pagination-box ui-box">
-      <div class="pagination-container">
-        <div class="pagination">
-          <a href=""><i class="icon fa-caret-left"></i></a>
-        </div>
-        <div class="pagination">
-          <a href="">1</a>
-        </div>
-        <div class="pagination">
-          <a href="">2</a>
-        </div>
-        <div class="pagination">
-          <a href="">3</a>
-        </div>
-        <div class="pagination">
-          <a href=""><i class="icon fa-caret-right"></i></a>
-        </div>
-      </div>
+      <l-pagination :total="4" current="1"/>
     </div>
   </div>
 </template>
 
 <style>
+  .table-box {
+    display: flex;
+    flex-direction: row;
+  }
+  .table-wrapper {
+    flex: 1;
+    margin: 0 5px;
+  }
+  
   .ui-box {
     margin-bottom: 20px;
   }
@@ -134,53 +95,29 @@
     color: #ccc;
     cursor: not-allowed;
   }
-  .pinks-tag {
-    display: inline-block;
-    padding: 5px 10px;
-    height: 30px;
-    border: 2px solid #585858;
-    line-height: 20px;
-    text-align: center;
-    border-radius: 10px;
-    cursor: default
-  }
-  .pinks-tag:hover {
-    color: #f2849e;
-    border-color: #f2849e;
-  }
-  .pinks-tag.special {
-    background: #585858;
-    border-color: #585858;
-    color: #fff;
-  }
-  .pinks-tag.special:hover {
-    background: #f2849e;
-    border-color: #f2849e;
-  }
-  /* progress */
-  .pinks-progress {
-    display: block;
-    width: 200px;
-    height: 8px;
-    border-radius: 5px;
-    background: #ccc;
-    position: relative;
-  }
-  .pinks-progress .current-progress {
-    position: absolute;
-    display: block;
-    background: #f2849e;
-    height: 100%;
-    border-top-left-radius: 5px;
-    border-bottom-left-radius: 5px;
-  }
 </style>
 <script>
+  import Table from './Table'
+  import Select from './Select'
+  import Tag from './Tag'
+  import Progress from './Progress'
+  import Pagination from './Pagination'
   export default {
+    components: {
+      'l-table': Table,
+      'l-select': Select,
+      'l-tag': Tag,
+      'l-progress': Progress,
+      'l-pagination': Pagination
+    },
     data () {
       return {
         checked: false,
         picked: false,
+        select: [{
+          value: '111',
+          key: '1111'
+        }],
         table: {
           head: ['head1', 'head2', 'head3', 'head4', 'head5'],
           body: [
