@@ -8,7 +8,11 @@ export default [{
   link: 'https://github.com/lingmissing/react-native-doubanMovie'
 }, {
   title: '在线小工具集',
-  children: [{
+  children: [ {
+    id: 1,
+    title: '在线计算器',
+    link: '#/cal'
+  }, {
     id: 2,
     title: '在线Markdown',
     desc: '使用marked插件构建，自定义样式，并且数据存储在localStorage中，提供长期存储的功能',
@@ -33,10 +37,6 @@ export default [{
     title: '图片处理（压缩，裁切）',
     desc: '利用canvas的toDataURL导出并压缩，使用cropImage实现图片切割',
     link: '#/dealimg/compress'
-  }, {
-    id: 7,
-    title: '在线计算器',
-    link: '#/cal'
   }]
 }, {
   title: 'CSS动画',
