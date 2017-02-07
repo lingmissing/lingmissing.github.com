@@ -11,6 +11,16 @@
       <br><br>
       <button type="text" class="pinks-btn fit">按钮</button>
     </div>
+    <div class="tab-box ui-box">
+      <l-tab :tabs="tabInfo.tabs" :disabled="tabInfo.disabled" :active="tabInfo.active"/>
+    </div>
+    <div class="tag-box ui-box">
+      <l-tag value="标签"/>
+      <l-tag value="标签2" type="special"/>
+    </div>
+    <div class="progress-box ui-box">
+      <l-progress percent="0.8"/>
+    </div>
     <div class="table-box ui-box">
       <div class="table-wrapper">
         <l-table :head="table.head" :body="table.body"/>
@@ -27,30 +37,15 @@
         <br>
         <input type="radio" id="two" value="Two" v-model="picked">
         <label for="two">Two</label>
-
         <input type="text" name="" value="">
         <input type="text" class="half">
         <input type="text" disabled="disabled" value="jjjjjj">
         <textarea rows="4" value="this is textarea"></textarea>
         <l-select :data="select"/>
+        <div class="select-wrapper">
+          <l-select :data="select"/>
+        </div>
       </form>
-      <div class="select-wrapper">
-        <l-select :data="select"/>
-      </div>
-    </div>
-    <div class="tab-box ui-box">
-      <div class="pinks-tabs">
-        <div class="pinks-tabs-tab disabled">1item</div>
-        <div class="pinks-tabs-tab active">2item</div>
-        <div class="pinks-tabs-tab">3item</div>
-      </div>
-    </div>
-    <div class="tag-box ui-box">
-      <l-tag value="tags"/>
-      <l-tag value="tags" type="special"/>
-    </div>
-    <div class="progress-box ui-box">
-      <l-progress percent="0.8"/>
     </div>
     <div class="pagination-box ui-box">
       <l-pagination :total="4" current="1"/>
@@ -63,38 +58,18 @@
     display: flex;
     flex-direction: row;
   }
+  .form-box {
+    width: 50%;
+    margin: 20px auto;
+  }
   .table-wrapper {
     flex: 1;
     margin: 0 5px;
   }
-  
   .ui-box {
     margin-bottom: 20px;
   }
-  /* tags */
-  .pinks-tabs {
-    border-bottom: 1px solid #585858;
-    display: flex;
-    flex-direction: row;
-  }
-  .pinks-tabs .pinks-tabs-tab {
-    padding: 8px 20px;
-    margin-right: 24px;
-    cursor: pointer;
-    margin-bottom: -1px;
-    border-bottom: 2px solid transparent;
-  }
-  .pinks-tabs .pinks-tabs-tab:hover {
-    color: #f2849e;
-  }
-  .pinks-tabs .pinks-tabs-tab.active {
-    color: #f2849e;
-    border-bottom: 2px solid #f2849e;
-  }
-  .pinks-tabs .pinks-tabs-tab.disabled {
-    color: #ccc;
-    cursor: not-allowed;
-  }
+
 </style>
 <script>
   import Table from './Table'
@@ -102,16 +77,23 @@
   import Tag from './Tag'
   import Progress from './Progress'
   import Pagination from './Pagination'
+  import Tab from './Tab'
   export default {
     components: {
       'l-table': Table,
       'l-select': Select,
       'l-tag': Tag,
       'l-progress': Progress,
-      'l-pagination': Pagination
+      'l-pagination': Pagination,
+      'l-tab': Tab
     },
     data () {
       return {
+        tabInfo: {
+          tabs: ['item1', 'item2', 'item3'],
+          active: ['item1'],
+          disabled: ['item2']
+        },
         checked: false,
         picked: false,
         select: [{
