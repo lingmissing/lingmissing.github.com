@@ -273,6 +273,7 @@
     bottom: -3px;
     left:50%;
   }
+
   .bottom-right {
     cursor: se-resize; 
     position: absolute; 
@@ -281,7 +282,6 @@
     bottom:-3px;
     right: -3px
   }
-
   .top-middle {
     cursor: n-resize; 
     position: absolute;
@@ -348,9 +348,7 @@
     z-index: 320; 
     display: block;
   }
-
 </style>
-
 <script>
   export default {
     data () {
@@ -393,6 +391,7 @@
         }
       },
       picSize () {
+        const { width, height } = this.picInfo
         return {
           width: `${this.picInfo.width}px`,
           height: `${this.picInfo.height}px`

@@ -6,7 +6,7 @@
         <h2>{{config.name}} <span>{{config.job}}</span></h2>
         <div class="social">
           <a class="fa fa-github" href="https://github.com/lingmissing/">Github</a>
-          <a class="fa fa-envelope-o" href="mailto:1227046827@qq.com">Email</a>
+          <a class="fa fa-envelope-o" href="mailto:lingmissing@gmail.com">Email</a>
         </div>
       </div>
     </div>
@@ -335,7 +335,7 @@
       emailFor () {
         console.log(this.form)
         const { subject, body, budget } = this.form
-        window.location.href = `mailto:1227046827@qq.com?subject=${subject}-${budget}&body=${body}`
+        window.location.href = `mailto:lingmissing@gmail.com?subject=${subject}-${budget}&body=${body}`
       }
     }
   }

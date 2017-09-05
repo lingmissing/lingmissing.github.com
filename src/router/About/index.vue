@@ -16,16 +16,16 @@
 <span class="b">function</span> <span class="g">People</span>(<span class="y">name</span>,<span class="y">sex</span>){
     <span class="r">this</span>.<span class="b">name</span> = <span class="db">name</span>
     <span class="r">this</span>.<span class="r">sex</span>  = <span class="db">sex</span>
-    <span class="r">this</span>.<span class="r">hobbit</span> = <span class="db">[]</span>
+    <span class="r">this</span>.<span class="r">hobbies</span> = <span class="db">[]</span>
 }
 
-<span class="g">People</span>.<span class="b">prototype</span>.<span class="g">addHobbit</span> = <span class="r">function</span>(<span class="y">h</span>){
-    <span class="r">this</span>.<span class="r">hobbit</span>.<span class="g">push</span>(<span class="db">h</span>)
+<span class="g">People</span>.<span class="b">prototype</span>.<span class="g">addHobbies</span> = <span class="r">function</span>(<span class="y">h</span>){
+    <span class="r">this</span>.<span class="r">hobbies</span>.<span class="g">push</span>(<span class="db">h</span>)
     <span class="r">return</span> <span class="r">this</span>
 }
 
 <span class="b">var</span> <span class="db">I</span> = <span class="r">new</span> <span class="g">People</span>('<span class="r">Elaine</span>','<span class="r">girl</span>')
-<span class="b">I</span>.<span class="g">addHobbit</span>('<span class="r">Ukulele</span>').<span class="g">addHobbit</span>('<span class="r">Painting</span>').<span class="g">addHobbit</span>('<span class="r">coding</span>')
+<span class="b">I</span>.<span class="g">addHobbies</span>('<span class="r">Ukulele</span>').<span class="g">addHobbies</span>('<span class="r">Painting</span>').<span class="g">addHobbies</span>('<span class="r">coding</span>')
           </code>
         </pre>
 
